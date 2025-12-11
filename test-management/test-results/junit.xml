@@ -1,0 +1,6 @@
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="3.1543369999999995">
+<testsuite name="todo.spec.js" timestamp="2025-12-10T15:06:52.265Z" hostname="chromium" tests="1" failures="0" skipped="0" time="2.478" errors="0">
+<testcase name="TC-TODO-020: Delete a task" classname="todo.spec.js" time="2.478">
+</testcase>
+</testsuite>
+</testsuites>

@@ -1,0 +1,116 @@
+name: "🧪 Тест-кейс"
+description: "Створити новий тест-кейс"
+title: "[TC] "
+labels: ["test-case"]
+body:
+  - type: input
+    id: test-id
+    attributes:
+      label: ID тест-кейсу
+      description: "Унікальний ідентифікатор (наприклад, TC-AUTH-001)"
+      placeholder: "TC-XXX-000"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: suite
+    attributes:
+      label: Тестовий набір
+      description: "До якого набору належить цей тест?"
+      options:
+        - Автентифікація
+        - Платежі
+        - Користувачі
+        - API
+        - Продуктивність
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Пріоритет
+      options:
+        - "🔴 Критичний"
+        - "🟠 Високий"
+        - "🟡 Середній"
+        - "🟢 Низький"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: type
+    attributes:
+      label: Тип тесту
+      options:
+        - Функціональний
+        - Регресійний
+        - Димовий (Smoke)
+        - Інтеграційний
+        - E2E
+        - Продуктивність
+        - Безпека
+    validations:
+      required: true
+
+  - type: dropdown
+    id: automation
+    attributes:
+      label: Статус автоматизації
+      options:
+        - Ручний
+        - Автоматизовано
+        - Планується автоматизація
+    validations:
+      required: true
+
+  - type: textarea
+    id: preconditions
+    attributes:
+      label: Передумови
+      description: "Що повинно бути виконано перед тестом?"
+      placeholder: |
+        - Користувач авторизований
+        - Тестові дані створені
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Кроки тестування
+      description: "Покрокова інструкція"
+      placeholder: |
+        1. Відкрити сторінку /login
+        2. Ввести логін "test@example.com"
+        3. Ввести пароль "Password123"
+        4. Натиснути кнопку "Увійти"
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Очікуваний результат
+      description: "Що повинно статися?"
+      placeholder: |
+        - Користувач перенаправлений на головну сторінку
+        - Відображається привітальне повідомлення
+    validations:
+      required: true
+
+  - type: textarea
+    id: test-data
+    attributes:
+      label: Тестові дані
+      description: "Необхідні дані для тесту"
+      placeholder: |
+        Логін: test@example.com
+        Пароль: Password123
+
+  - type: input
+    id: related-requirement
+    attributes:
+      label: Пов'язана вимога/історія
+      description: "Посилання на user story або вимогу"
+      placeholder: "#123 або URL"

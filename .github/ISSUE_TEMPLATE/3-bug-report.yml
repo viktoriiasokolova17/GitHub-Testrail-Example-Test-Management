@@ -1,0 +1,111 @@
+name: "🐛 Bug from Testing"
+description: "Report a bug found during testing"
+title: "[BUG] "
+labels: ["bug", "from-test"]
+body:
+  - type: input
+    id: test-case
+    attributes:
+      label: Related Test Case
+      description: "Which test found this bug?"
+      placeholder: "#123 or TC-AUTH-001"
+    validations:
+      required: true
+
+  - type: input
+    id: test-run
+    attributes:
+      label: Test Run
+      description: "During which run was it found?"
+      placeholder: "#456 or RUN-2024-001"
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      options:
+        - "🔴 Blocker"
+        - "🟠 Critical"
+        - "🟡 Major"
+        - "🟢 Minor"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Browser
+      options:
+        - WebKit (Safari/iOS)
+        - Chromium (Chrome)
+        - Firefox
+    validations:
+      required: true
+
+  - type: dropdown
+    id: device
+    attributes:
+      label: Device
+      options:
+        - Desktop
+        - Mobile
+        - Tablet
+    validations:
+      required: true
+
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Environment
+      options:
+        - Development
+        - Production
+    validations:
+      required: true
+
+  - type: dropdown
+    id: reproducibility
+    attributes:
+      label: Reproducibility
+      options:
+        - Always
+        - Intermittent
+        - Rarely
+        - Once
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      description: "What went wrong?"
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps to Reproduce
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual Result
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Result
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: "Screenshots, logs, videos, etc."

@@ -1,0 +1,77 @@
+name: "🏃 Тестовий прогін"
+description: "Створити новий тестовий прогін"
+title: "[RUN] "
+labels: ["test-run"]
+body:
+  - type: input
+    id: run-id
+    attributes:
+      label: ID прогону
+      description: "Унікальний ідентифікатор"
+      placeholder: "RUN-2024-001"
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Версія/Білд
+      description: "Версія додатку для тестування"
+      placeholder: "v1.2.3 або build #456"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Середовище
+      options:
+        - Development
+        - Staging
+        - UAT
+        - Production
+    validations:
+      required: true
+
+  - type: dropdown
+    id: run-type
+    attributes:
+      label: Тип прогону
+      options:
+        - Повна регресія
+        - Димове тестування
+        - Тестування фічі
+        - Валідація релізу
+    validations:
+      required: true
+
+  - type: input
+    id: milestone
+    attributes:
+      label: Milestone
+      description: "Пов'язаний milestone"
+      placeholder: "Sprint 15 або Release 2.0"
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: Область тестування
+      description: "Які тестові набори включені?"
+      placeholder: |
+        - [ ] Автентифікація (всі)
+        - [ ] Платежі (тільки checkout)
+    validations:
+      required: true
+
+  - type: input
+    id: assigned
+    attributes:
+      label: Призначені тестувальники
+      description: "GitHub імена користувачів"
+      placeholder: "@tester1, @tester2"
+
+  - type: input
+    id: due-date
+    attributes:
+      label: Дедлайн
+      placeholder: "2024-01-20"

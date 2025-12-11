@@ -1,0 +1,89 @@
+name: "🏃 Test Run"
+description: "Create a new test run"
+title: "[RUN] "
+labels: ["test-run"]
+body:
+  - type: input
+    id: run-id
+    attributes:
+      label: Run ID
+      description: "Unique identifier"
+      placeholder: "RUN-2024-001"
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Version/Build
+      description: "Application version to test"
+      placeholder: "v1.2.3 or build #456"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Browser
+      options:
+        - WebKit (Safari/iOS)
+        - Chromium (Chrome)
+        - Firefox
+        - All browsers
+    validations:
+      required: true
+
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Environment
+      options:
+        - Development
+        - Production
+    validations:
+      required: true
+
+  - type: dropdown
+    id: device
+    attributes:
+      label: Device
+      options:
+        - Desktop
+        - Mobile
+        - Tablet
+    validations:
+      required: true
+
+  - type: dropdown
+    id: run-type
+    attributes:
+      label: Run Type
+      options:
+        - Full Regression
+        - Smoke Testing
+        - Feature Testing
+        - Release Validation
+    validations:
+      required: true
+
+  - type: input
+    id: milestone
+    attributes:
+      label: Milestone
+      description: "Related milestone"
+      placeholder: "Sprint 15 or Release 2.0"
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: Test Scope
+      description: "Which test suites are included?"
+      placeholder: |
+        - [ ] Functionality
+        - [ ] UI/Interface
+        - [ ] API
+        - [ ] Security
+        - [ ] Performance
+        - [ ] Integration
+    validations:
+      required: true

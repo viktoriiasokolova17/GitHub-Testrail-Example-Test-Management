@@ -1,0 +1,141 @@
+name: "🧪 Test Case"
+description: "Create a new test case"
+title: "[TC] "
+labels: ["test-case"]
+body:
+  - type: input
+    id: test-id
+    attributes:
+      label: Test Case ID
+      description: "Unique identifier (e.g., TC-AUTH-001)"
+      placeholder: "TC-XXX-000"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: suite
+    attributes:
+      label: Test Suite
+      description: "Which suite does this test belong to?"
+      options:
+        - Functionality
+        - UI/Interface
+        - API
+        - Security
+        - Performance
+        - Integration
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options:
+        - "🔴 Critical"
+        - "🟠 High"
+        - "🟡 Medium"
+        - "🟢 Low"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: type
+    attributes:
+      label: Test Type
+      options:
+        - Positive
+        - Negative
+        - Edge case
+        - UI
+        - Smoke
+        - Regression
+    validations:
+      required: true
+
+  - type: dropdown
+    id: automation
+    attributes:
+      label: Automation Status
+      options:
+        - Manual
+        - Automated
+        - Planned for automation
+    validations:
+      required: true
+
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Browser
+      description: "Which browser to test on?"
+      options:
+        - WebKit (Safari/iOS)
+        - Chromium (Chrome)
+        - Firefox
+        - All browsers
+    validations:
+      required: false
+
+  - type: dropdown
+    id: device
+    attributes:
+      label: Device
+      options:
+        - Desktop
+        - Mobile
+        - Tablet
+    validations:
+      required: false
+
+  - type: textarea
+    id: preconditions
+    attributes:
+      label: Preconditions
+      description: "What should be done before the test?"
+      placeholder: |
+        - User is logged in
+        - Test data is created
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Test Steps
+      description: "Step-by-step instructions"
+      placeholder: |
+        1. Open page /login
+        2. Enter email "test@example.com"
+        3. Enter password "Password123"
+        4. Click "Sign in" button
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Result
+      description: "What should happen?"
+      placeholder: |
+        - User is redirected to the home page
+        - Welcome message is displayed
+    validations:
+      required: true
+
+  - type: textarea
+    id: test-data
+    attributes:
+      label: Test Data
+      description: "Required data for the test"
+      placeholder: |
+        Email: test@example.com
+        Password: Password123
+
+  - type: input
+    id: related-requirement
+    attributes:
+      label: Related Requirement/Story
+      description: "Link to user story or requirement"
+      placeholder: "#123 or URL"
